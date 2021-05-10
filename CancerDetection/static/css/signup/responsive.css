@@ -1,0 +1,38 @@
+
+/*
+@media (min-width:992px) and (max-width:1199px) {
+
+	#logo{
+        margin-left: 2%;
+    }
+    #signup-form{
+        margin-left: 20%;
+    }
+    
+	
+	
+}
+
+@media (min-width:768px) and (max-width:991px) {
+
+	#signup-form{
+        margin-left: 7%;
+    }
+    
+	
+	
+}
+
+@media (max-width:767px){
+    #signup-form{
+        margin-left: -7%;
+    }
+}
+
+@media (max-width:480px){
+    #logo{
+        margin-left: 33%;
+    }
+}
+
+*/
