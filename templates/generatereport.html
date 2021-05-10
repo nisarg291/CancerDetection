@@ -1,0 +1,66 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">    
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <title>Home</title>
+    <style>
+        th,td{
+            color:blueviolet;
+            border:1px solid black;
+        }
+        input{
+            border:none; 
+            outline:none;
+            
+        }
+        #t1{
+            font-family: "Arial Black", sans-serif;
+            color:crimson
+        }
+        body{
+            background: url('../static/images/5.jpg');
+            background-size:cover;
+        }
+    </style>
+</head>
+<body>
+
+<center><h1 id="t1" class="mt-5">Cancer Detection System</h1></center>
+<br>
+<div class="container">
+<table class="table table-striped table-hover"> 
+    <thead>
+    <tr>
+        <th>Patient ID </th>
+        <th>Patient Name</th>
+        <th>Image</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    {%for generatereport in generatereport %}
+    <tr>
+    <form action="detect" method="post" action="patient/detect" enctype="multipart/form-data">{% csrf_token %}
+        <td><input type="text" value="{{ generatereport.patientid }}" name="id" readonly></td>
+        <td><input type="text" value="{{generatereport.patientname}}" name="name" readonly></td>
+        <td><input type="file" name="img" accept="image/*" style="font-size: 20px;"required></td>
+        <td><input type="submit" value="Generate Report" >
+        </td>
+        </form>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table></div>
+
+
+
+</body>
+</html>

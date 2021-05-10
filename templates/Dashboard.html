@@ -1,0 +1,76 @@
+{%load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes-MarketPlace</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{%static 'css/Dashboard/Dashboard.css' %}">
+    <link rel="stylesheet" href="{%static 'css/Dashboard/responsive.css' %}">
+</head>
+
+<body>
+
+    <div class="container">
+        <div id="Dashboard">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-12">
+                    <div id="header">
+                        <h2>Cancer Detector</h2>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-12">
+                    <div class="box-container">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-12">
+                                <div class="box text-center">
+                                    <button class="btn btn-block btn-general">
+                                    
+                                          <a href="patient/addpatient">Add Patient</a>
+
+                                </button>
+
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-12">
+                                <div class="box text-center">
+                                     <button class="btn btn-block btn-general"><a href="patient/generatereport">Generate Report</a></button>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-12">
+                                <div class="box text-center">
+                                     <button class="btn btn-block btn-general"><a href="patient/userdetail">User Details</a></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+    <hr>
+    <footer>
+        <div class="row">
+            <div class="col-md-6 col-sm-12 col-12 text-center">
+                version 1.1.24
+            </div>
+            <div class="col-md-6 col-sm-12 col-12 text-right">
+                <p>
+                    Copyright &copy; LJ All rights Reserved.
+                </p>
+            </div>
+        </div>
+
+    </footer>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+
+
+
+</body></html>
