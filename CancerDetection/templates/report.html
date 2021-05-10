@@ -1,0 +1,149 @@
+{%load static%}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <style>
+        #header,
+        #lab-details-1,
+        #lab-details-2,
+        #userdetail-1,
+        #userdetail-2 {
+            display: flex;
+            
+            
+            justify-content: space-between;
+        }
+
+        #header h1 {
+            color: #6255a5;
+
+            font-weight: 600;
+        }
+
+        #header p {
+            color: royalblue;
+            font-weight: 500;
+        }
+
+        hr {
+            height: 2px;
+            background-color: black;
+        }
+
+        h3 {
+            color: #6255a5;
+        }
+
+        p {
+            color: royalblue;
+            font-weight: 100;
+        }
+
+        .user-report-1,
+        .user-report-2 {
+            display: flex;
+            
+            flex-direction: column;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="header">
+            <div id="labname">
+                <h1>{{ labname }}</h1>
+                <p>Pathology Lab</p>
+            </div>
+            <div id="drname">
+                <h3>Dr. {{doctorname}}</h3>
+                <p>{{doctordegree}}</p>
+            </div>
+        </div>
+
+        <hr>
+        <div id="lab-details-1">
+            <div id="address">
+                <b>Address</b>: {{address}}
+            </div>
+            <div id="phoneno">
+                <b>Phone no.</b>: {{contact}}
+            </div>
+        </div>
+        <div id="lab-details-2">
+            <div id="time">
+                <b>Time:</b> {{open}} - {{close}}
+            </div>
+            <div id="email">
+                <b>Email: </b>{{email}}
+            </div>
+        </div>
+        <hr>
+        <div id="userdetail-1">
+
+            <div class="name">
+                <b>NAME :</b> {{patientname}}
+            </div>
+            <div class="age">
+                <b>AGE : </b>{{age}} years
+            </div>
+            <div class="gender">
+                <b>GENDER : </b>{{gender}}
+            </div>
+
+
+        </div>
+        <div id="userdetail-2">
+            <div class="RefBy">
+                <b>REF By : </b>{{ref}}
+            </div>
+            <div class="Date">
+                <b>DATE :</b> {{date}}
+            </div>
+        </div>
+
+
+
+        <hr>
+        <div id="report">
+            <h1 style="text-align:center; font-size:30px;font-weight:600;"><u>Cancer Detection Report</u></h1>
+            <div class="user-report-1">
+                <div class="name">
+                    <h2>Method : Convolutional Nueral Network</h2> 
+                </div>
+                <div class="name">
+                    <h2>Interpretation : {{result}}</h2>
+                </div>
+            </div>
+        </div>
+        {% if result == "positive"%}
+        <hr>
+        <div>
+            <h1>Recommend Hospitals</h1>
+            <ul>
+            {% for rs in rs %}
+                <li><a href="{{ws.0}}">{{rs}}</a></li>
+            {% endfor %}
+            </ul>
+        </div>
+        {%endif%}
+        <div class="footer">
+            <div class="sign" style="float: right;">
+                <div>
+                    <h3>Dr. {{doctorname}}</h3>
+                    <p>Doctor Degree : {{doctordegree}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
